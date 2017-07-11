@@ -2,7 +2,7 @@
 
 Anki is the Japanese word for **_memorization_**. For more information [click here](https://en.wikipedia.org/wiki/Anki_(software)).
 
-`Important`
+**Important!**
 
 This version of the Anki Game was built on top of the [first one](https://github.com/damianfanaro/anki). 
 The idea was to achieve exactly the same business logic but applying the [CQRS](https://martinfowler.com/bliki/CQRS.html) 
@@ -59,5 +59,26 @@ Every line in the `deck` file correspond to a card with the following form:
 
 #### Notes:
 
-- This application does not contain special dependencies except for JUnit and Mockito for testing purposes.
 - For simplicity, it just interacts with the user through the standard output stream in the display. 
+
+### Anki Game With Docker:
+
+This repo contains a [Dockerfile](./Dockerfile) at the root level, which means that the program is able to be built
+as a Docker image and then it can be run inside a Docker container.
+
+> INFO: You need Docker installed on your machine.
+
+To build the Docker image with name **anki-game** run:
+
+    docker build . -t anki-game
+
+You can check that the image exist by running:
+
+    docker images
+    
+Then, you can run the previous image with:
+
+    docker run -it anki-game
+    
+The good part of using Docker is that one does not need to have Java and Maven installed.
+The Dockerfile uses multi-stage builds when building the image.

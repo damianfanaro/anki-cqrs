@@ -1,10 +1,11 @@
 package com.weekendesk.anki.game;
 
 import com.weekendesk.anki.card.CardUtil;
+import com.weekendesk.anki.constant.AnkiConstants;
 import com.weekendesk.anki.deck.Deck;
 import com.weekendesk.anki.deck.DeckFileReader;
 import com.weekendesk.anki.deck.DeckFileWriter;
-import com.weekendesk.anki.game.impl.AnkiGameImpl;
+import com.weekendesk.anki.game.internal.AnkiGameInternal;
 
 /**
  * Convenient factory of different
@@ -18,7 +19,7 @@ public final class AnkiGameFactory {
         DeckFileReader deckFileReader = new DeckFileReader();
         Deck deck = deckFileReader.read(AnkiConstants.DECK_PATH_SYSTEM_PROPERTY);
         deck.sortCards(CardUtil.ALPHABETIC_ORDER_BY_QUESTION);
-        return new AnkiGameImpl(deck, new DeckFileReader(), new DeckFileWriter());
+        return new AnkiGameInternal(deck, new DeckFileReader(), new DeckFileWriter());
     }
 
 }

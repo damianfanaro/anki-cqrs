@@ -1,4 +1,4 @@
-package com.weekendesk.anki.game;
+package com.weekendesk.anki.constant;
 
 /**
  * Constants of the system.

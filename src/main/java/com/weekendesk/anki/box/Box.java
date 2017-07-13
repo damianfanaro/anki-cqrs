@@ -1,4 +1,4 @@
-package com.weekendesk.anki.game;
+package com.weekendesk.anki.box;
 
 /**
  * Enumeration representing the different
@@ -8,6 +8,6 @@ package com.weekendesk.anki.game;
  */
 public enum Box {
 
-    RED, ORANGE, GREEN;
+    RED, ORANGE, GREEN
 
 }

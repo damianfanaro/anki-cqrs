@@ -1,17 +1,19 @@
 package com.weekendesk.anki.game;
 
+import com.weekendesk.anki.box.Box;
+
 /**
  * Main contract for the Anki Game.
  * <p>
  * Implementations of this interface will
  * run the game and interact with a
- * {@link AnkiGameInteractor}.
+ * {@link AnkiInteractor}.
  *
  * @author dfanaro
  */
 public interface AnkiGame {
 
-    void start(AnkiGameInteractor ankiGameInteractor);
+    boolean gameWon();
 
     int getRedDeckSize();
 
@@ -19,6 +21,14 @@ public interface AnkiGame {
 
     int getGreenDeckSize();
 
-    boolean gameWon();
+    void openSession();
+
+    void closeSession();
+
+    void moveCurrentCard(Box box);
+
+    String nextQuestionToStudy();
+
+    String answerForCurrentQuestion();
 
 }

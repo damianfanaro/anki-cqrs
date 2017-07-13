@@ -1,7 +1,7 @@
 package com.weekendesk.anki.deck;
 
 import com.weekendesk.anki.card.CardUtil;
-import com.weekendesk.anki.game.AnkiConstants;
+import com.weekendesk.anki.constant.AnkiConstants;
 
 import java.io.IOException;
 import java.nio.file.Files;

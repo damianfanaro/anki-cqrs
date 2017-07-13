@@ -1,6 +1,5 @@
 package com.weekendesk.anki.game.event;
 
-import com.weekendesk.anki.box.Box;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,9 +13,11 @@ import lombok.Getter;
 @Getter
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public final class BoxSelectedEvent {
+public final class SessionClosedEvent {
 
-    private final String id;
-    private final Box selectedBox;
+    private final int redDeckSize;
+    private final int orangeDeckSize;
+    private final int greenDeckSize;
+    private final boolean gameWon;
 
 }

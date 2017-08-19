@@ -5,8 +5,14 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.smartholiday.exam</groupId>
-    <artifactId>anki</artifactId>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.4.RELEASE</version>
+    </parent>
+
+    <groupId>com.damianfanaro</groupId>
+    <artifactId>anki-cqrs</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -47,6 +53,11 @@
                 <version>${axon.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.axonframework</groupId>
+                <artifactId>axon-spring-boot-starter</artifactId>
+                <version>${axon.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
@@ -55,6 +66,10 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -70,6 +85,10 @@
         <dependency>
             <groupId>org.axonframework</groupId>
             <artifactId>axon-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -109,7 +128,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.weekendesk.anki.AnkiStarter</mainClass>
+                            <mainClass>com.damianfanaro.anki.AnkiStarter</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
